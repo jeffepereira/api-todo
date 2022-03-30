@@ -36,6 +36,8 @@ kool run phpunit
 ### Api
 
 Url da api >> http://0.0.0.0:8199
+Na raiz do projeto se encontra um arquivo de `Collection` do `Postman` para facilitar o **teste**.
+`Api_Todo_Postman.json`
 
 #### Modelos de retorno do _resource_
 
