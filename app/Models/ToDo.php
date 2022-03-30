@@ -9,12 +9,14 @@ class ToDo extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'title',
-        'description',
-    ];
+    protected $fillable = ['title', 'description'];
 
-    protected $dates = [
-        'finished_at',
-    ];
+    protected $dates = ['finished_at'];
+
+    protected $appends = ['complete'];
+
+    public function getCompleteAttribute()
+    {
+        return $this->finished_at ? true : false;
+    }
 }

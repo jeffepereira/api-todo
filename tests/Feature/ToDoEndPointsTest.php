@@ -24,6 +24,7 @@ class ToDoEndPointsTest extends TestCase
             'title',
             'description',
             'finished_at',
+            'complete',
             'created_at',
             'updated_at',
         ]
