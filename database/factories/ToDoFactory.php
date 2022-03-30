@@ -17,7 +17,20 @@ class ToDoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->sentence(3, true),
+            'description' => $this->faker->sentence(6, true),
+            'finished_at' => $this->faker->boolean()
+                ? $this->faker->dateTimeBetween('-1 year', '+1 year')
+                : null,
         ];
+    }
+
+    public function notCompleted()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'finished_at' => null,
+            ];
+        });
     }
 }
