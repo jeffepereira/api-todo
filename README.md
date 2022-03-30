@@ -8,26 +8,26 @@ Instalação, rápida e prática 👇
 
 -   [Kool](https://kool.dev/docs/getting-started/installation)
 
-Para subir o ambiente, execute o **comando** abaixo na raiz do projeto.
+Para subir o ambiente, execute o **_comando_** abaixo na raiz do projeto.
 
 ```
 kool run setup
 ```
 
-Este comando deverá ser executado apenas uma vez. Quando for necessário derrubar ou subir os containers novamente, os **comandos** abaixo deverão ser usados.
+Este comando deverá ser executado apenas uma vez. Quando for necessário derrubar ou subir os containers novamente, os **_comandos_** abaixo deverão ser usados.
 
 ```
 kool start
 kool stop
 ```
 
-Caso queira verificar o **status** dos containers este é o comando.
+Caso queira verificar o **_status_** dos containers este é o comando.
 
 ```
 kool status
 ```
 
-Para rodar os testes
+Para rodar os **_testes_**
 
 ```
 kool run phpunit
@@ -35,9 +35,13 @@ kool run phpunit
 
 ### Api
 
-Retornos do **resource**
+Url da api >> http://0.0.0.0:8199
 
-_SHOW_
+#### Modelos de retorno do _resource_
+
+###### _SHOW_
+
+`http://0.0.0.0:8199/1`
 
 ```json
 {
@@ -55,7 +59,9 @@ _SHOW_
 }
 ```
 
-_INDEX_
+###### _INDEX_
+
+`http://0.0.0.0:8199/`
 
 ```json
 {
@@ -72,7 +78,7 @@ _INDEX_
             }
         },
         {
-            "id": 1,
+            "id": 2,
             "type": "todo",
             "attributes": {
                 "title": "Segunda tarefa",
@@ -83,5 +89,65 @@ _INDEX_
             }
         }
     ]
+}
+```
+
+###### _INDEX_ com paginate
+
+`http://0.0.0.0:8199?paginate=10`
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "type": "todo",
+            "attributes": {
+                "title": "Primeira tarefa",
+                "description": "Comprar material de escritório",
+                "finished_at": "2021-08-22 09:24:37",
+                "created_at": "2022-03-30 04:05:54",
+                "updated_at": "2022-03-30 04:05:54"
+            }
+        }
+        ...
+    ],
+    "links": {
+        "first": "http://0.0.0.0:8199?page=1",
+        "last": "http://0.0.0.0:8199?page=2",
+        "prev": null,
+        "next": "http://0.0.0.0:8199?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 2,
+        "links": [
+            {
+                "url": null,
+                "label": "pagination.previous",
+                "active": false
+            },
+            {
+                "url": "http://0.0.0.0:8199?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": "http://0.0.0.0:8199?page=2",
+                "label": "2",
+                "active": false
+            },
+            {
+                "url": "http://0.0.0.0:8199?page=2",
+                "label": "pagination.next",
+                "active": false
+            }
+        ],
+        "path": "http://0.0.0.0:8199",
+        "per_page": 10,
+        "to": 10,
+        "total": 20
+    }
 }
 ```
