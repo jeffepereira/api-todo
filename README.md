@@ -1,64 +1,155 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Api ToDo
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este projeto visa disponibilizar uma **api** para gerenciamento de To-dos.
 
-## About Laravel
+Para facilitar e viablizar a execução deste projeto em máquinas que não possuam dependências de desenvolvimento, foi usado a ferramenta Kool, que cria containers com os **presets** necessários.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Instalação, rápida e prática 👇
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Kool](https://kool.dev/docs/getting-started/installation)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Para subir o ambiente, execute o **_comando_** abaixo na raiz do projeto.
 
-## Learning Laravel
+```
+kool run setup
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Este comando deverá ser executado apenas uma vez. Quando for necessário derrubar ou subir os containers novamente, os **_comandos_** abaixo deverão ser usados.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+kool start
+kool stop
+```
 
-## Laravel Sponsors
+Caso queira verificar o **_status_** dos containers este é o comando.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+kool status
+```
 
-### Premium Partners
+Para rodar os **_testes_**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```
+kool run phpunit
+```
 
-## Contributing
+### Api
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Url da api >> http://0.0.0.0:8199
+Na raiz do projeto se encontra um arquivo de `Collection` do `Postman` para facilitar o **teste**.
+`Api_Todo_Postman.json`
 
-## Code of Conduct
+#### Modelos de retorno do _resource_
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+###### _SHOW_
 
-## Security Vulnerabilities
+`http://0.0.0.0:8199/1`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```json
+{
+    "data": {
+        "id": 1,
+        "type": "todo",
+        "attributes": {
+            "title": "Primeira tarefa",
+            "description": "Contratar internet",
+            "finished_at": "2023-01-01 14:59:54",
+            "created_at": "2022-03-30 04:10:15",
+            "updated_at": "2022-03-30 04:10:15"
+        }
+    }
+}
+```
 
-## License
+###### _INDEX_
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+`http://0.0.0.0:8199/`
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "type": "todo",
+            "attributes": {
+                "title": "Primeira tarefa",
+                "description": "Comprar material de escritório",
+                "finished_at": "2021-08-22 09:24:37",
+                "created_at": "2022-03-30 04:05:54",
+                "updated_at": "2022-03-30 04:05:54"
+            }
+        },
+        {
+            "id": 2,
+            "type": "todo",
+            "attributes": {
+                "title": "Segunda tarefa",
+                "description": "Levar criança na escola",
+                "finished_at": null,
+                "created_at": "2022-03-30 04:10:15",
+                "updated_at": "2022-03-30 04:10:15"
+            }
+        }
+    ]
+}
+```
+
+###### _INDEX_ com paginate
+
+`http://0.0.0.0:8199?paginate=10`
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "type": "todo",
+            "attributes": {
+                "title": "Primeira tarefa",
+                "description": "Comprar material de escritório",
+                "finished_at": "2021-08-22 09:24:37",
+                "created_at": "2022-03-30 04:05:54",
+                "updated_at": "2022-03-30 04:05:54"
+            }
+        }
+        ...
+    ],
+    "links": {
+        "first": "http://0.0.0.0:8199?page=1",
+        "last": "http://0.0.0.0:8199?page=2",
+        "prev": null,
+        "next": "http://0.0.0.0:8199?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 2,
+        "links": [
+            {
+                "url": null,
+                "label": "pagination.previous",
+                "active": false
+            },
+            {
+                "url": "http://0.0.0.0:8199?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": "http://0.0.0.0:8199?page=2",
+                "label": "2",
+                "active": false
+            },
+            {
+                "url": "http://0.0.0.0:8199?page=2",
+                "label": "pagination.next",
+                "active": false
+            }
+        ],
+        "path": "http://0.0.0.0:8199",
+        "per_page": 10,
+        "to": 10,
+        "total": 20
+    }
+}
+```
