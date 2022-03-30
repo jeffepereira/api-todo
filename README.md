@@ -6,28 +6,28 @@ Para facilitar e viablizar a execução deste projeto em máquinas que não poss
 
 Instalação, rápida e prática 👇
 
--   [Kool](https://kool.dev/docs/getting-started/installation)
+-   [Kool](https://kool.dev/docs/getting-started/installation) ❤️
 
-Para subir o ambiente, execute o **_comando_** abaixo na raiz do projeto.
+Para subir o ambiente, execute o **_comando_** abaixo na raiz do projeto. ⚙
 
 ```
 kool run setup
 ```
 
-Este comando deverá ser executado apenas uma vez. Quando for necessário derrubar ou subir os containers novamente, os **_comandos_** abaixo deverão ser usados.
+Este comando deverá ser executado apenas uma vez. Quando for necessário derrubar ou subir os containers novamente, os **_comandos_** abaixo deverão ser usados. 🏃‍♂💨
 
 ```
-kool start
-kool stop
+kool start 🛫
+kool stop  🛬
 ```
 
-Caso queira verificar o **_status_** dos containers este é o comando.
+Caso queira verificar o **_status_** dos containers este é o comando. 📡
 
 ```
 kool status
 ```
 
-Para rodar os **_testes_**
+Para rodar os **_testes_** 🛠
 
 ```
 kool run phpunit
@@ -36,7 +36,9 @@ kool run phpunit
 ### Api
 
 Url da api >> http://0.0.0.0:8199
-Na raiz do projeto se encontra um arquivo de `Collection` do `Postman` para facilitar o **teste**.
+
+Na raiz do projeto se encontra um arquivo de `Collection` do `Postman` para facilitar o **teste**. 😎
+
 `Api_Todo_Postman.json`
 
 #### Modelos de retorno do _resource_
