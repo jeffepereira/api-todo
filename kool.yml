@@ -14,6 +14,7 @@ scripts:
     - kool start
     - kool run composer install
     - kool run artisan key:generate
+    - kool run artisan migrate
     - kool run node-setup
   # Use this to reset the state of your database and run common hoursekeeping
   # when changing branches.
