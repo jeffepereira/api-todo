@@ -20,7 +20,7 @@ class ToDoFactory extends Factory
             'title' => $this->faker->sentence(3, true),
             'description' => $this->faker->sentence(6, true),
             'finished_at' => $this->faker->boolean()
-                ? $this->faker->dateTimeBetween('-1 year', '+1 year')
+                ? $this->faker->dateTimeBetween('-1 year', 'now')
                 : null,
         ];
     }

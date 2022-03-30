@@ -56,6 +56,7 @@ Na raiz do projeto se encontra um arquivo de `Collection` do `Postman` para faci
             "title": "Primeira tarefa",
             "description": "Contratar internet",
             "finished_at": "2023-01-01 14:59:54",
+            "complete": true,
             "created_at": "2022-03-30 04:10:15",
             "updated_at": "2022-03-30 04:10:15"
         }
@@ -77,6 +78,7 @@ Na raiz do projeto se encontra um arquivo de `Collection` do `Postman` para faci
                 "title": "Primeira tarefa",
                 "description": "Comprar material de escritório",
                 "finished_at": "2021-08-22 09:24:37",
+                "complete": true,
                 "created_at": "2022-03-30 04:05:54",
                 "updated_at": "2022-03-30 04:05:54"
             }
@@ -88,6 +90,7 @@ Na raiz do projeto se encontra um arquivo de `Collection` do `Postman` para faci
                 "title": "Segunda tarefa",
                 "description": "Levar criança na escola",
                 "finished_at": null,
+                "complete": false,
                 "created_at": "2022-03-30 04:10:15",
                 "updated_at": "2022-03-30 04:10:15"
             }
@@ -110,6 +113,7 @@ Na raiz do projeto se encontra um arquivo de `Collection` do `Postman` para faci
                 "title": "Primeira tarefa",
                 "description": "Comprar material de escritório",
                 "finished_at": "2021-08-22 09:24:37",
+                "complete": true,
                 "created_at": "2022-03-30 04:05:54",
                 "updated_at": "2022-03-30 04:05:54"
             }
